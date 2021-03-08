@@ -1,7 +1,7 @@
 package com.company;
 
 public class BankAccount {
-    double amount;
+    private double amount;
 
     public BankAccount() {}
     public BankAccount(double amount) {
@@ -12,8 +12,10 @@ public class BankAccount {
         if(amount < sum){
             throw new LimitException("Вы просите больше чем сумма на вашем балансе!", amount);
         }
-        else {amount -= sum;}
-        return sum;
+        else {
+            //double d_sum = (double) sum;
+            amount -= sum;
+            return amount;}
     }
     public void deposit(double sum)
     {
